@@ -52,7 +52,7 @@ export default function Component(props) {
             author={author?.node?.name}
           />
           <div className="container">
-          <h1>Single Page</h1>
+            <h1>Singular Page</h1>
             <ContentWrapper content={content}>
               <TaxonomyTerms post={props.data.post} taxonomy={'categories'} />
               <TaxonomyTerms post={props.data.post} taxonomy={'tags'} />

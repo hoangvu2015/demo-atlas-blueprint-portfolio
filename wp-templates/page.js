@@ -73,7 +73,7 @@ Component.query = gql`
     $databaseId: ID!
     $headerLocation: MenuLocationEnum
     $footerLocation: MenuLocationEnum
-    $asPreview: Boolean = false
+    $asPreview: Boolean = true
   ) {
     page(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {
       title

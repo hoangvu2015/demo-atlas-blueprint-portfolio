@@ -47,3 +47,5 @@ NavigationMenu.fragments = {
     }
   `,
 };
+
+console.log(NavigationMenu, 'NavigationMenu');
