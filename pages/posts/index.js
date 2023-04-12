@@ -35,7 +35,7 @@ export default function Page() {
   return (
     <>
       <SEO title={pageTitle(data?.generalSettings)} />
-
+<h1>okokok</h1>
       <Header menuItems={primaryMenu} />
 
       <Main>
