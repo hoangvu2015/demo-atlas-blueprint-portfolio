@@ -8,6 +8,7 @@ import ThemeStyles from 'components/ThemeStyles/ThemeStyles';
 
 export default function MyApp({ Component, pageProps }) {
   const router = useRouter();
+  console.log(router, 'router');
 
   return (
     <>

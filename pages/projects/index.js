@@ -13,10 +13,11 @@ import {
   SEO,
   NavigationMenu,
 } from 'components';
-import { getNextStaticProps } from '@faustwp/core';
+// import { getNextStaticProps } from '@faustwp/core';
 import { pageTitle } from 'utilities';
 import { BlogInfoFragment } from 'fragments/GeneralSettings';
 import appConfig from 'app.config';
+import { getNextServerSideProps } from '@faustwp/core/dist/cjs/getProps';
 
 export default function Page() {
   const { data, loading, fetchMore } = useQuery(Page.query, {
@@ -106,8 +107,13 @@ Page.variables = () => {
   };
 };
 
-export async function getStaticProps(context) {
-  return getNextStaticProps(context, {
+export async function getServerSideProps(context) {
+  return getNextServerSideProps(context, {
     Page,
   });
 }
+// export async function getStaticProps(context) {
+//   return getNextStaticProps(context, {
+//     Page,
+//   });
+// }

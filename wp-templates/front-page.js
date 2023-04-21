@@ -24,6 +24,7 @@ export default function Component() {
   const { data, loading } = useQuery(Component.query, {
     variables: Component.variables(),
   });
+  console.log(data, 'data page');
   if (loading) {
     return null;
   }
@@ -53,7 +54,7 @@ export default function Component() {
         <div className="container">
           <section className="hero text-center">
             <Heading className={styles.heading} level="h1">
-              Welcome to your Blueprint
+              Welcome to your Blueprint hhh
             </Heading>
             <p className={styles.description}>
               Achieve unprecedented performance with modern frameworks and the
@@ -63,7 +64,7 @@ export default function Component() {
               <Button styleType="secondary" href="/contact-us">
                 GET STARTED
               </Button>
-              <Button styleType="primary" href="/about">
+              <Button styleType="primary" href="/about-us">
                 LEARN MORE
               </Button>
             </div>
