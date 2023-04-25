@@ -14,7 +14,7 @@ export default function Page(props) {
 //   //  });
 // }
 export function getStaticProps(ctx) {
-  return getWordPressProps({ ctx, revalidate: 20 });
+  return getWordPressProps({ ctx});
 }
 
 export async function getStaticPaths() {

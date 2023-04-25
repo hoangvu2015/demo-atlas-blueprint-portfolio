@@ -109,6 +109,7 @@ Page.variables = () => {
 
 export async function getStaticProps(context) {
   return getNextStaticProps(context, {
-    Page
+    Page,
+    revalidate: 20
   });
 }

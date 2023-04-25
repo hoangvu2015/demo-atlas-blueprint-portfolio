@@ -4,19 +4,18 @@ import { WordPressTemplate, getWordPressProps } from '@faustwp/core';
 
 export default function Page(props) {
   return <>
-    <h2>LALALLALA</h2>
     <WordPressTemplate {...props} />
   </>;
 }
 
-export async function getServerSideProps(ctx) {
-  return getWordPressProps({ ctx });
-
-  // return getNextServerSideProps(ctx, {
-  //   Page
-  // });
-}
-
-// export function getStaticProps(ctx) {
+// export async function getServerSideProps(ctx) {
 //   return getWordPressProps({ ctx });
+
+//   // return getNextServerSideProps(ctx, {
+//   //   Page
+//   // });
 // }
+
+export function getStaticProps(ctx) {
+  return getWordPressProps({ ctx });
+}

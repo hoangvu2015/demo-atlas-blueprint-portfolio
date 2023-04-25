@@ -11,6 +11,7 @@ import {
   FeaturedImage,
   Main,
   SEO,
+  ClientRenderingTest
 } from 'components';
 import { BlogInfoFragment } from 'fragments/GeneralSettings';
 
@@ -42,6 +43,10 @@ export default function Component(props) {
         />
         <div className="container">
           <ContentWrapper content={contentArea} />
+        </div>
+        <div className="container">
+          <h2>Client Redering</h2>
+          <ClientRenderingTest />
         </div>
       </Main>
 
