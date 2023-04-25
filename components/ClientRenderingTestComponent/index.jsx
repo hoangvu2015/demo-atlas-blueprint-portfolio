@@ -4,11 +4,11 @@ const ClientRenderingTest = () => {
 
   const [comment, setComment] = useState('')
 
-  const {data, loading, fetchMore} = useQuery(ClientRenderingTest.query);
-  const [createComment, {commentData}] = useMutation(ClientRenderingTest.createComment);
+  const {data, loading} = useQuery(ClientRenderingTest.query);
+  const [createComment] = useMutation(ClientRenderingTest.createComment);
   console.log(data, loading, 'ClientRenderingTest');
 
-  const createCommentEvent = (e) => {
+  const createCommentEvent = () => {
     if (comment) {
       createComment({variables: {input: comment}})
     }
@@ -18,7 +18,7 @@ const ClientRenderingTest = () => {
   if (loading) return (<></>);
   return (
     <div>
-      {comments && comments.length > 0 && comments.map((comment, idx) => {
+      {comments && comments.length > 0 && comments.map((comment) => {
         return <div key={comment?.id} className='mb-5' style={{padding: 12, boxShadow: '0 0 1px 1px #ccc', marginBottom: 24}}>
           <div dangerouslySetInnerHTML={{__html: comment?.content}}></div>
           <h5><strong>{comment?.author?.node?.name}</strong></h5>
