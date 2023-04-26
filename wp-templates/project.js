@@ -35,7 +35,6 @@ export default function Component(props) {
 
       <Main>
         <EntryHeader title={title} />
-        <h1>PAPAPAP</h1>
         <ProjectHeader
           image={featuredImage?.node}
           summary={summary}

@@ -15,4 +15,19 @@ module.exports = withFaust({
     locales: ['en'],
     defaultLocale: 'en',
   },
+  async redirects() {
+    return [
+      {
+        source: '/sample-page',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/hello-me',
+        destination: '/',
+        permanent: true,
+      },
+    ]
+  },
+
 });
