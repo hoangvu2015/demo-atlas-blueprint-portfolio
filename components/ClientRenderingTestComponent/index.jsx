@@ -16,27 +16,19 @@ const ClientRenderingTest = () => {
   }
 
   useEffect(() => {
-    console.log(data, loading, 'ClientRenderingTest');
     if (data) {
       const comments = data?.comments?.nodes
       setComments(comments)
-    }
-
-    return () => {
-
     }
   }, [data])
   useEffect(() => {
     if (result?.data) {
       const newComment = result?.data?.createComment?.comment
-      const tmp = comments.filter(comment => comment.id === newComment.id)
-      if (!tmp.length) {
-        setComments(prev => [...prev, newComment])
-      }
-    }
-
-    return () => {
-
+      setComments(prev => {
+        const tmp = prev.filter(comment => comment.id === newComment.id)
+        return tmp.length ? [...prev, newComment] : prev
+      })
+      // }
     }
   }, [result.data])
 
