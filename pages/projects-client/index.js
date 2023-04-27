@@ -77,8 +77,8 @@ Page.variables = () => {
   };
 };
 
-export async function getServerSideProps(context) {
-  return getNextServerSideProps(context, {
-    Page,
-  });
-}
+// export async function getServerSideProps(context) {
+//   return getNextServerSideProps(context, {
+//     Page,
+//   });
+// }

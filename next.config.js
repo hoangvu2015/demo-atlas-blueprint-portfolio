@@ -1,4 +1,6 @@
+
 const { withFaust, getWpHostname } = require('@faustwp/core');
+
 
 /**
  * @type {import('next').NextConfig}
@@ -22,12 +24,11 @@ module.exports = withFaust({
         destination: '/',
         permanent: true,
       },
-      {
-        source: '/hello-me',
-        destination: '/',
-        permanent: true,
-      },
+      // {
+      //   source: '/hello-me',
+      //   destination: '/',
+      //   permanent: true,
+      // },
     ]
   },
-
 });
