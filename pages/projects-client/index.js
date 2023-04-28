@@ -13,7 +13,7 @@ import {
 } from 'components';
 import { pageTitle } from 'utilities';
 import { BlogInfoFragment } from 'fragments/GeneralSettings';
-// import { getNextServerSideProps } from '@faustwp/core/dist/cjs/getProps';
+import { getNextServerSideProps } from '@faustwp/core/dist/cjs/getProps';
 
 export default function Page() {
   const { data, loading } = useQuery(Page.query, {
@@ -77,8 +77,8 @@ Page.variables = () => {
   };
 };
 
-// export async function getServerSideProps(context) {
-//   return getNextServerSideProps(context, {
-//     Page,
-//   });
-// }
+export async function getServerSideProps(context) {
+  return getNextServerSideProps(context, {
+    Page,
+  });
+}

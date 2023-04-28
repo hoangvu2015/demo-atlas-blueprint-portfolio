@@ -5,6 +5,8 @@ const { withFaust, getWpHostname } = require('@faustwp/core');
 /**
  * @type {import('next').NextConfig}
  **/
+
+
 module.exports = withFaust({
   reactStrictMode: true,
   sassOptions: {
@@ -18,17 +20,39 @@ module.exports = withFaust({
     defaultLocale: 'en',
   },
   async redirects() {
-    return [
-      {
-        source: '/sample-page',
-        destination: '/',
-        permanent: true,
+    const redirectResult = [];
+    const apiUrl = process.env.NEXT_PUBLIC_WORDPRESS_URL + 'graphql/';
+    const api = await fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
       },
-      // {
-      //   source: '/hello-me',
-      //   destination: '/',
-      //   permanent: true,
-      // },
-    ]
+      body: JSON.stringify({
+        query: `query GetRedirects {
+          redirects {
+            id
+            url
+            title
+            position
+            match_url
+            action_code
+            action_type
+            action_data
+          }
+        }`
+      })
+    });
+    const redirects = api.data?.redirects ?? [{match_url: '/hello-me', action_data: '/'}];
+    for (let i = 0; i < redirects.length; i++) {
+      if (redirects[i].match_url && redirects[i].action_data) {
+        redirectResult.push({
+          source: redirects[i].match_url,
+          destination: redirects[i].action_data,
+          permanent: true,
+        });
+      }
+    }
+
+    return redirectResult;
   },
 });

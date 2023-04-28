@@ -28,6 +28,34 @@ function Projects({ id, emptyText = 'No projects found.' }) {
   });
 
   useEffect(() => {
+    const apiUrl = process.env.NEXT_PUBLIC_WORDPRESS_URL + 'graphql/';
+    (async () => {
+      const api = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          query: `query GetRedirects {
+            redirects {
+              id
+              url
+              title
+              position
+              match_url
+              action_code
+              action_type
+              action_data
+            }
+          }`
+        })
+      })
+      console.log(api);
+    })()
+    // console.log(api.json());
+  })
+
+  useEffect(() => {
     let tmpPro = [];
     if (queryResult.data) {
       tmpPro = queryResult.data?.projects?.edges.map(el => el.node)
