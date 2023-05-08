@@ -24,7 +24,7 @@ export default function Component() {
   const { data, loading } = useQuery(Component.query, {
     variables: Component.variables(),
   });
-  console.log(data, 'data page');
+  // console.log(data, 'data page');
   if (loading) {
     return null;
   }

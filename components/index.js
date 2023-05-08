@@ -24,6 +24,7 @@ import SearchResults from './SearchResults';
 import LoadingSearchResult from './LoadingSearchResult';
 import SearchRecommendations from './SearchRecommendations';
 import ClientRenderingTest from './ClientRenderingTestComponent';
+import ProjectsClientSide from './ProjectsClientSide';
 
 export {
   Button,
@@ -51,5 +52,6 @@ export {
   SearchResults,
   SearchRecommendations,
   LoadingSearchResult,
-  ClientRenderingTest
+  ClientRenderingTest,
+  ProjectsClientSide
 };
