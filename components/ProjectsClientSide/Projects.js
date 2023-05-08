@@ -28,7 +28,7 @@ function Projects({ id, emptyText = 'No projects found.' }) {
   });
 
   useEffect(() => {
-    const apiUrl = process.env.NEXT_PUBLIC_WORDPRESS_URL + 'graphql/';
+    const apiUrl = process.env.NEXT_PUBLIC_WORDPRESS_URL + '/graphql/';
     (async () => {
       const api = await fetch(apiUrl, {
         method: 'POST',
