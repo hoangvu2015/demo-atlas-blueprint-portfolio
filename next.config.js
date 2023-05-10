@@ -24,7 +24,7 @@ async function redirects() {
           }
         }`);
 
-    const redirects = api.data?.redirects ?? [{ match_url: '/hello-me', action_data: '/' }];
+    const redirects = api.data?.redirects ?? [];
     for (let i = 0; i < redirects.length; i++) {
       if (redirects[i].match_url && redirects[i].action_data) {
         redirectResult.push({
