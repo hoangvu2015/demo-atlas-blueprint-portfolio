@@ -8,14 +8,14 @@ export default function Page(props) {
   </>;
 }
 
-// export async function getServerSideProps(ctx) {
-//   return getWordPressProps({ ctx });
-
-//   // return getNextServerSideProps(ctx, {
-//   //   Page
-//   // });
-// }
-
-export function getStaticProps(ctx) {
+export async function getServerSideProps(ctx) {
   return getWordPressProps({ ctx });
+
+  // return getNextServerSideProps(ctx, {
+  //   Page
+  // });
 }
+
+// export function getStaticProps(ctx) {
+//   return getWordPressProps({ ctx });
+// }
