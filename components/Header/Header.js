@@ -25,6 +25,7 @@ export default function Header({ className, menuItems }) {
 
   return (
     <header className={headerClasses}>
+    <h1>Test</h1>
       <SkipNavigationLink />
       <div className="container">
         <div className={cx('bar')}>
