@@ -1,4 +1,4 @@
-import { getWordPressProps, WordPressTemplate } from '@faustwp/core';
+import { WordPressTemplate } from '@faustwp/core';
 // import { WordPressTemplate } from '@faustwp/core';
 import { getNextServerSideProps } from '@faustwp/core/dist/cjs/getProps';
 
