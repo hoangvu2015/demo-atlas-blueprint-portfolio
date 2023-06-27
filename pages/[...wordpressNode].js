@@ -1,6 +1,6 @@
 import { getWordPressProps, WordPressTemplate } from '@faustwp/core';
 // import { WordPressTemplate } from '@faustwp/core';
-import { getNextServerSideProps } from '@faustwp/core/dist/cjs/getProps';
+// import { getNextServerSideProps } from '@faustwp/core/dist/cjs/getProps';
 
 export default function Page(props) {
   // console.log(props, 'props WordPressTemplate');
