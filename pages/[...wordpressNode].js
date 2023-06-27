@@ -7,15 +7,15 @@ export default function Page(props) {
   return <WordPressTemplate {...props} />;
 }
 
-// export async function getServerSideProps(ctx) {
-//   // return getWordPressProps({ ctx });
-//   return getNextServerSideProps(ctx, {
-//     Page
-//    });
-// }
-export function getStaticProps(ctx) {
-  return getWordPressProps({ ctx, revalidate: 10});
+export async function getServerSideProps(ctx) {
+  // return getWordPressProps({ ctx });
+  return getNextServerSideProps(ctx, {
+    Page
+   });
 }
+// export function getStaticProps(ctx) {
+//   return getWordPressProps({ ctx, revalidate: 10});
+// }
 
 export async function getStaticPaths() {
   return {
